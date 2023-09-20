@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos básicos */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Estilos do header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 150px;
+    background-color: #CFAE9F;
+    position: relative;
+}
+
+/* Logo no centro */
+header img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+}
+
+/* Estilos do menu à esquerda */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #FFF;
+    font-family: Amiri;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #ddd;
+}
+
+/* Estilos dos links à direita */
+.links {
+    display: flex;
+    gap: 20px;
+}
+
+.links a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    color: #FFF;
+    font-family: Amiri;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+.links i {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-color: #ccc;
+    border-radius: 50%;
+}
