@@ -7,6 +7,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* Estilos básicos */
 body {
     font-family: 'Amiri', serif;
@@ -16,11 +20,13 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+    position: fixed;
     background-color: #CFAE9F;
     height: 5rem;
     width: 100%;
+    z-index: 9999;
 }
+
 
 nav {
     position: absolute;
@@ -35,6 +41,7 @@ nav {
 .links {
     position: absolute;
     right: calc(10% ); /* 50% é o centro, 100px é metade da largura do logo e 80px é a distância especificada */
+    top: 33%;
 }
 
 /* Estilização adicional para a navegação e links */
@@ -81,10 +88,10 @@ nav ul li a:hover{
     display: none;
     position: absolute; /* Posicionamento absoluto para o ícone */
     left: 10%; /* Distância do canto esquerdo */
-    top: 50%; /* Centralizar verticalmente */
-    transform: translateY(-50%); /* Ajuste para centralizar perfeitamente */
+    top: 43%; /* Centralizar verticalmente */
     color: #CFAE9F;
     font-size: 1.3rem;
+    
 }
 
 .hamburger-nav {
@@ -292,6 +299,8 @@ nav ul li a:hover{
 .contact-footer p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .contact-links {
@@ -310,6 +319,7 @@ nav ul li a:hover{
     transition: background-color 0.3s;
     text-decoration: none;
     color: #FFF;
+    font-size: 1.1rem;
 }
 
 .contact-links a:hover {
@@ -511,5 +521,34 @@ nav ul li a:hover{
         display: grid;
         grid-template-columns: repeat(1, 1fr); /* 4 colunas por padrão */
         gap: 20px; /* Espaçamento entre os cards */
+    }
+
+    .contact-footer {
+        padding: 1.5rem 0;
+    }
+
+    .contact-footer h3 {
+        font-size: 1.8rem;
+    }
+
+    .contact-footer p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .contact-links {
+        flex-direction: column;
+        gap: 15px;
+        margin: 0 auto;
+    }
+
+    .contact-links a {
+        width: 40%;
+        margin: 0 auto; /* Centraliza os botões */
+        font-size: 1rem; /* Ajusta o tamanho da fonte */
+        display: flex;
+        justify-content: center; /* Centraliza horizontalmente */
+        align-items: center;     /* Centraliza verticalmente */
+        text-align: center; 
     }
 }
