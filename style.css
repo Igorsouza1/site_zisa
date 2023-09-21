@@ -355,6 +355,7 @@ nav ul li a:hover{
 
     .hamburger-nav.active {
         display: block; /* Exibe o menu hambúrguer quando ativado */
+        z-index: 999;
     }
 
     .hamburger-nav ul {
