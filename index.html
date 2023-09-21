@@ -4,12 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+
+    <script src="https://kit.fontawesome.com/5fcb046be3.js" crossorigin="anonymous"></script>
     <title>Ziza Lingerie</title>
 </head>
 <body>
     <header>
-        <!-- Menu à esquerda -->
-        <nav>
+        <i class="fas fa-bars hamburger" ></i>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+            </ul>
+        </nav>
+
+        <nav class="hamburger-nav">
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#produtos">Produtos</a></li>
@@ -18,20 +29,121 @@
             </ul>
         </nav>
     
+    
         <!-- Logo no centro -->
         <img src="./assets/Logo.PNG" alt="Logo da Empresa" width="100">
     
         <!-- Links à direita -->
         <div class="links">
             <a href="#">
-                <i></i> Link 1
+                <a href="https://www.instagram.com/zisalingerie/?igshid=NzZlODBkYWE4Ng%3D%3D" target="_blank"><i class="fa-brands fa-instagram fa-sm" ></i> </a>
             </a>
             <a href="#">
-                <i></i> Link 2
+                <a href="https://wa.me/91863939" target="_blank"> <i class="fa-brands fa-whatsapp fa-sm"></i></a>
             </a>
         </div>
     </header>
 
+    <div class="banner">
+        <div class="background-img">
+        </div>
+        <div class="content-banner">
+            <h1>Qualidade Inigualável & Conforto Absoluto</h1>
+            <p>Descubra a diferença de usar produtos feitos com paixão e dedicação. Sinta-se bem todos os dias!</p>
+            <a href="https://wa.me/91863939" target="_blank" class="whatsapp-btn">
+                <i class="fa-brands fa-whatsapp"></i> Fale conosco no WhatsApp!
+            </a>
+        </div>
+    </div>
+
+    <section class="feature-section">
+        <!-- Primeira linha: imagem à esquerda, texto à direita -->
+        <div class="feature-row">
+            <div class="feature-image">
+                <img src="./assets/feature1.jpg" alt="Descrição da imagem 1">
+            </div>
+            <div class="feature-text">
+                <h1>Qualidade que destaca</h1>
+                <p>Nossas peças são cuidadosamente confeccionadas para destacar a beleza e a versatilidade em cada detalhe. A qualidade superior garante que você se sinta confiante e confortável em qualquer situação.</p>
+            </div>
+        </div>
     
+        <!-- Segunda linha: texto à esquerda, imagem à direita -->
+        <div class="feature-row reverse">
+            <div class="feature-text">
+                <h1>Versatilidade que Surpreende</h1>
+                <p>Do casual ao elegante, nossas peças se adaptam a todas as ocasiões. A versatilidade é a chave para um guarda-roupa que acompanha seu ritmo, e nós garantimos que você esteja pronta para qualquer desafio.</p>
+            </div>
+            <div class="feature-image">
+                <img src="./assets/feature2.jpg" alt="Descrição da imagem 2">
+            </div>
+        </div>
+    
+        <!-- Terceira linha: imagem à esquerda, texto à direita -->
+        <div class="feature-row">
+            <div class="feature-image">
+                <img src="./assets/feature3.jpg" alt="Descrição da imagem 3">
+            </div>
+            <div class="feature-text">
+                <h1>Beleza no Dia a Dia</h1>
+                <p>Acreditamos que toda mulher merece se sentir bonita e poderosa todos os dias. Nossas peças são projetadas para realçar sua beleza natural, tornando cada momento ainda mais especial.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="products-section">
+        <h2>Produtos</h2>
+        <div class="product-grid">
+            <!-- Repita o seguinte bloco para cada produto -->
+            <div class="product-card">
+                <img src="./assets/produto1.png" alt="Descrição do Produto">
+                <h3>Nome do Produto</h3>
+                <span class="price">R$100,00</span>
+            </div>
+            <div class="product-card">
+                <img src="./assets/produto2.png" alt="Descrição do Produto">
+                <h3>Nome do Produto</h3>
+                <span class="price">R$100,00</span>
+            </div>
+            <div class="product-card">
+                <img src="./assets/produto3.png" alt="Descrição do Produto">
+                <h3>Nome do Produto</h3>
+                <span class="price">R$100,00</span>
+            </div>
+            <div class="product-card">
+                <img src="./assets/produto4.png" alt="Descrição do Produto">
+                <h3>Nome do Produto</h3>
+                <span class="price">R$100,00</span>
+            </div>
+            <div class="product-card">
+                <img src="./assets/produto5.png" alt="Descrição do Produto">
+                <h3>Nome do Produto</h3>
+                <span class="price">R$100,00</span>
+            </div>
+            <div class="product-card">
+                <img src="./assets/produto6.png" alt="Descrição do Produto">
+                <h3>Nome do Produto</h3>
+                <span class="price">R$100,00</span>
+            </div>
+            
+            <!-- ... -->
+        </div>
+    </section>
+
+
+    <footer class="contact-footer">
+        <h3>Entre em Contato</h3>
+        <p>Para saber mais sobre nossos produtos e novidades, siga-nos no Instagram ou envie-nos uma mensagem no WhatsApp.</p>
+        <div class="contact-links">
+            <a href="https://www.instagram.com/zisalingerie/?igshid=NzZlODBkYWE4Ng%3D%3D" target="_blank">
+                <i class="fab fa-instagram"></i> Siga no Instagram
+            </a>
+            <a href="https://wa.me/91863939" target="_blank" class="whatsapp-btn">
+                <i class="fab fa-whatsapp"></i> Mensagem no WhatsApp
+            </a>
+        </div>
+    </footer>
+    
+    <script src="./script.js"></script>
 </body>
 </html>

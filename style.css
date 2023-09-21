@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
 
+/* Reset CSS */
 * {
     margin: 0;
     padding: 0;
@@ -8,31 +9,39 @@
 
 /* Estilos básicos */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Amiri', serif;
+    line-height: 1.6;
 }
-
-/* Estilos do header */
 header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 40px 150px;
-    background-color: #CFAE9F;
+    justify-content: center;
     position: relative;
+    background-color: #CFAE9F;
+    height: 5rem;
+    width: 100%;
 }
 
-/* Logo no centro */
-header img {
+nav {
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 120px;
+    left: calc(10% ); /* 50% é o centro, 100px é metade da largura do logo e 80px é a distância especificada */
 }
 
-/* Estilos do menu à esquerda */
+.logo {
+    display: block;
+    margin: 0 auto; /* centraliza o logo horizontalmente */
+}
+
+.links {
+    position: absolute;
+    right: calc(10% ); /* 50% é o centro, 100px é metade da largura do logo e 80px é a distância especificada */
+}
+
+/* Estilização adicional para a navegação e links */
 nav ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
     display: flex;
     gap: 20px;
 }
@@ -41,50 +50,465 @@ nav ul li {
     display: inline;
 }
 
-nav ul li a {
-    text-decoration: none;
+nav ul li a{
     color: #FFF;
-    font-family: Amiri;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    padding: 5px 10px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: inline-block; 
+    transition: transform 0.3s;
+}
+
+nav ul li a:hover{
+    transform: scale(1.2);
+    color: #7c5847;
+}
+
+
+.links a {
+    margin-left: 10px;
+    color: #FFF;
+    text-decoration: none;
+    font-size: 1.5rem;
+    display: inline-block; 
+    transition: transform 0.3s;
+}
+
+.links a:hover{
+    transform: scale(1.5);
+    color: #7c5847;
+}
+.hamburger {
+    display: none;
+    position: absolute; /* Posicionamento absoluto para o ícone */
+    left: 10%; /* Distância do canto esquerdo */
+    top: 50%; /* Centralizar verticalmente */
+    transform: translateY(-50%); /* Ajuste para centralizar perfeitamente */
+    color: #CFAE9F;
+    font-size: 1.3rem;
+}
+
+.hamburger-nav {
+    display: none; /* Ocultar por padrão */
+    position: absolute; /* Posicionamento absoluto para o menu hambúrguer */
+    top: 100%; /* Logo abaixo do header */
+    left: 0; /* Alinhado à esquerda */
+    width: 100%; /* Ocupa toda a largura */
+    background-color: #CFAE9F;
+}
+.banner {
+    position: relative;
+    width: 100%;
+    height: 90vh; /* Ajuste conforme necessário */
+    overflow: hidden;
+}
+
+.background-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.background-img {
+    background-image: url('./assets/banner.jpg');
+    /* Outras propriedades de estilo para o background, se necessário */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 90vh;
+}
+
+.content-banner {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    width: 50vw;
+    transform: translateY(-50%);
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+}
+
+.content-banner h1 {
+    font-size: 4vw;
+    margin-bottom: 10px;
+}
+
+.content-banner p {
+    font-size: 1.6vw;
+    margin-bottom: 20px;
+    max-width: 400px;
+}
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: #7c5847; /* Cor do WhatsApp */
+    color: #FFF;
+    padding: 20px 30px;
     border-radius: 5px;
+    font-size: 1.3rem;
+    text-decoration: none;
+    font-weight: bold;
     transition: background-color 0.3s;
 }
 
-nav ul li a:hover {
-    background-color: #ddd;
+.whatsapp-btn:hover {
+    background-color: #128C53; /* Cor mais escura do WhatsApp */
 }
 
-/* Estilos dos links à direita */
-.links {
+.whatsapp-btn i {
+    margin-right: 10px;
+}
+
+
+
+
+
+/* FEATURE SECTION */
+.feature-section {
+    width: 60%;
+    padding: 2rem 0; /* Espaçamento superior e inferior */
+    margin: 0 auto;
+}
+
+.feature-row {
     display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: space-between;
+    margin-bottom: 2rem; /* Espaçamento entre as linhas */
+    position: relative;
+    top: -40px;
+}
+
+.feature-row .reverse {
+    flex-direction: row-reverse; /* Inverte a ordem dos elementos */
+}
+
+.feature-image {
+    position: relative;
+    width: 450px;
+    height: 450px;
+    overflow: hidden; /* Esconde qualquer parte da imagem que exceda o tamanho do container */
+    position: relative; /* Permite o posicionamento absoluto da imagem dentro */
+    padding: 0 1rem; /* Espaçamento à esquerda e à direita */
+    border-radius: 4px;
+}
+
+.feature-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz a imagem se ajustar ao container */
+    position: absolute; /* Posiciona a imagem absolutamente dentro do container */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza a imagem */
+}
+
+.feature-text {
+    flex: 1; /* Ocupa metade da largura */
+    padding: 0 1rem; /* Espaçamento à esquerda e à direita */
+}
+
+.feature-text h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem; /* Espaçamento abaixo do título */
+    color: #cc8f72;
+}
+
+.feature-text p {
+    font-size: 1.6rem;
+}
+
+
+
+
+
+.products-section {
+    text-align: center;
+    padding: 2rem 0;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.products-section h2 {
+    margin-bottom: 2rem;
+    color: #cc8f72;
+    font-size: 2.2rem;
+}
+/* PRODUCT SECTION */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 4 colunas por padrão */
+    gap: 20px; /* Espaçamento entre os cards */
+}
+
+.product-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.product-card:hover img {
+    transform: scale(1.1);
+}
+
+.product-card h3 {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.product-card .price {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.contact-footer {
+    background-color: #CFAE9F;
+    padding: 2rem 0;
+    text-align: center;
+    color: #FFF;
+}
+
+.contact-footer h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.contact-footer p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
     gap: 20px;
 }
 
-.links a {
-    display: flex;
+.contact-links a {
+    display: inline-flex;
     align-items: center;
-    gap: 5px;
+    padding: 10px 20px;
+    background-color: #7c5847;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
     text-decoration: none;
     color: #FFF;
-    font-family: Amiri;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
 }
 
-.links a:hover {
-    text-decoration: underline;
+.contact-links a:hover {
+    background-color: #5a4136;
 }
 
-.links i {
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    background-color: #ccc;
-    border-radius: 50%;
+.contact-links i {
+    margin-right: 10px;
+}
+
+/* Ícones do FontAwesome para Instagram e WhatsApp */
+.fab.fa-instagram {
+    color: #E1306C;
+}
+
+.fab.fa-whatsapp {
+    color: #25D366;
+}
+
+
+
+
+
+
+@media (max-width: 1420px) {
+    .feature-section{
+        width: 90%;
+    }
+
+}
+
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .hamburger {
+        display: inline-block;
+        color: #FFF;
+    }
+
+    .main-nav {
+        display: none; /* Oculta o menu principal */
+    }
+
+    .hamburger-nav.active {
+        display: block; /* Exibe o menu hambúrguer quando ativado */
+    }
+
+    .hamburger-nav ul {
+        flex-direction: column;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    .hamburger-nav ul li {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .content-banner {
+        position: absolute;
+        top: 30%;
+        left: 10%;
+        width: 50vw;
+        transform: translateY(-50%);
+        color: #ffffff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    }
+
+    .content-banner p{
+        font-size: 1.5rem;
+    }
+
+    .feature-row {
+        position: relative; /* Define um contexto de posicionamento para os elementos internos */
+    }
+
+    .feature-image {
+        position: relative; /* Define um contexto de posicionamento para a imagem */
+        z-index: 1; /* Define a ordem de empilhamento da imagem */
+    }
+
+
+    .feature-text {
+        position: absolute; /* Posiciona o texto sobre a imagem */
+        top: 50%; /* Centraliza verticalmente */
+        left: 50%; /* Centraliza horizontalmente */
+        transform: translate(-10%, -50%); /* Ajusta para centralizar perfeitamente */
+        z-index: 2; /* Define a ordem de empilhamento do texto para que fique acima da imagem */
+        width: 60%;
+        height: auto;
+        background-color: rgba(0,0,0, 0.3); /* Adiciona um fundo branco semi-transparente para melhorar a legibilidade do texto */
+        padding: 10px; /* Adiciona um pouco de espaçamento interno ao texto */
+        border-radius: 5px; /* Adiciona bordas arredondadas ao fundo do texto */
+        color: white;
+        
+    }
+
+    .feature-text p{
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    }
+
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 4 colunas por padrão */
+        gap: 20px; /* Espaçamento entre os cards */
+    }
+}
+
+
+
+@media (max-width: 834px) {
+    .background-img {
+        background-image: url('./assets/banner-mobile.jpg');
+    }
+    
+    .content-banner {
+        position: absolute;
+        top: 50%; /* Centraliza verticalmente */
+        left: 50%; /* Centraliza horizontalmente */
+        width: 80vw; /* Ajusta a largura para 80% da largura da viewport */
+        transform: translate(-50%, -50%); /* Ajusta a centralização */
+        color: #ffffff;
+        text-align: center; /* Centraliza o texto horizontalmente */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    }
+
+    .content-banner h1 {
+        font-size: 6vw;
+        margin-bottom: 10px;
+    }
+
+    .content-banner p {
+        font-size: 5vw;
+        margin-bottom: 20px;
+        max-width: 400px;
+        margin-left: auto; /* Centraliza o parágrafo horizontalmente */
+        margin-right: auto; /* Centraliza o parágrafo horizontalmente */
+    }
+
+    .whatsapp-btn {
+        display: inline-flex; /* Usa flex para centralizar o ícone e o texto */
+        justify-content: center; /* Centraliza horizontalmente */
+        align-items: center; /* Centraliza verticalmente */
+        background-color: #7c5847; /* Cor do WhatsApp */
+        color: #FFF;
+        font-size: 1.2rem;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s;
+    }
+
+    .feature-row {
+        position: relative; /* Define um contexto de posicionamento para os elementos internos */
+        text-align: center; /* Centraliza o conteúdo horizontalmente */
+        top: 10px;
+    }
+
+    .feature-image{
+        width: 100%;
+        
+    }
+
+    .feature-image img {
+        display: block; /* Define a imagem como um elemento de bloco */
+        margin: 0 auto; /* Centraliza a imagem horizontalmente */
+        width: 100%; /* Garante que a imagem não exceda a largura do container */
+    }
+
+    .feature-text {
+        position: absolute; /* Posiciona o texto sobre a imagem */
+        top: 50%; /* Centraliza verticalmente */
+        left: 50%; /* Centraliza horizontalmente */
+        transform: translate(-50%, -50%); /* Ajusta para centralizar perfeitamente */
+        z-index: 2; /* Define a ordem de empilhamento do texto para que fique acima da imagem */
+        padding: 10px; /* Adiciona um pouco de espaçamento interno ao texto */
+        background-color: rgba(0,0,0, 0.4); /* Adiciona um fundo branco semi-transparente para melhorar a legibilidade do texto */
+        width: 100%;
+        height: 100%;
+        border-radius: 5px; /* Adiciona bordas arredondadas ao fundo do texto */
+        margin: 0 auto; /* Centraliza o texto horizontalmente */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .feature-text h1{
+        font-size: 1.9rem;
+    }
+
+    .feature-text p{
+        font-size: 1.3rem;
+    }
+
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); /* 4 colunas por padrão */
+        gap: 20px; /* Espaçamento entre os cards */
+    }
 }
